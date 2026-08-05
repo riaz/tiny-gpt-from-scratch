@@ -85,9 +85,9 @@ import numpy as np
 
 def make_2d_random(rows, cols, seed):
     """Return a (rows, cols) array of uniform floats in [0, 1) seeded by `seed`."""
-    # TODO: build a seeded RNG and draw a (rows, cols) uniform sample in [0, 1).
-    rng = np.random.default_rng()
-    return rng.random((rows, cols), dtype=np.float64)
+    # TODO: build a seeded RNG and draw a (rows, cols) uniform sample in [0, 1).    
+    rng = np.random.default_rng(seed)
+    return rng.random((rows, cols))
 
 # Step 13 - index_element (not yet solved)
 # TODO: implement
