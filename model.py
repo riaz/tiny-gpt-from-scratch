@@ -64,11 +64,21 @@ def get_array_shape(arr):
     # TODO: return the shape of arr
     return arr.shape
 
-# Step 10 - get_array_dtype (not yet solved)
-# TODO: implement
+# Step 10 - get_array_dtype
+import numpy as np
 
-# Step 11 - make_2d_zeros (not yet solved)
-# TODO: implement
+def get_array_dtype(arr):
+    """Return the dtype of a NumPy array."""
+    # TODO: return the dtype attribute of arr
+    return arr.dtype
+
+# Step 11 - make_2d_zeros
+import numpy as np
+
+def make_2d_zeros(rows, cols):
+    """Return a 2D NumPy array of zeros with shape (rows, cols)."""
+    # TODO: allocate a (rows, cols) array of zeros and return it
+    return np.zeros((rows, cols), dtype=np.float64)
 
 # Step 12 - make_2d_random (not yet solved)
 # TODO: implement
