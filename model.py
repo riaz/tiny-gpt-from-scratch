@@ -262,8 +262,14 @@ def stable_softmax_1d(logits):
     arr_exp =  array_exp(shifted)
     return arr_exp / sum_all(arr_exp)
 
-# Step 33 - stable_softmax_2d_rowwise (not yet solved)
-# TODO: implement
+# Step 33 - stable_softmax_2d_rowwise
+import numpy as np
+
+def stable_softmax_2d_rowwise(logits):
+    max_vector = max_along_axis(logits, axis=1)          # shape (N,)
+    shifted = logits - max_vector.reshape(-1, 1)          # subtract per-row, per column
+    exp = array_exp(shifted)
+    return exp / sum_keepdims(exp, axis=1)
 
 # Step 34 - read_text_file (not yet solved)
 # TODO: implement
