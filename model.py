@@ -325,8 +325,12 @@ def slice_y_at_offset(data, i, block_size):
     # TODO: extract the target window Y = data[i+1 : i+1+block_size] shifted by one.
     return data[i+1 : i+1+block_size]
 
-# Step 41 - sample_random_batch_offsets (not yet solved)
-# TODO: implement
+# Step 41 - sample_random_batch_offsets
+import numpy as np
+
+def sample_random_batch_offsets(data_len, block_size, batch_size, rng):
+    high = data_len - block_size
+    return rng.integers(0, high, size=batch_size)
 
 # Step 42 - stack_x_batch (not yet solved)
 # TODO: implement
