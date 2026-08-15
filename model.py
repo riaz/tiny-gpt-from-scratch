@@ -419,8 +419,15 @@ def sample_next_token(p_matrix, current_id, rng):
     # TODO: draw one categorical sample from the row of p_matrix at current_id
     return int(rng.choice(p_matrix.shape[1], p=p_matrix[current_id]))
 
-# Step 52 - generate_sequence (not yet solved)
-# TODO: implement
+# Step 52 - generate_sequence
+def generate_sequence(p_matrix, start_id, length, rng):
+    """Autoregressively sample a sequence of token ids of shape (length,)."""
+    sequence = np.empty(length, dtype=int)
+    current = start_id
+    for i in range(length):
+        sequence[i] = current
+        current = sample_next_token(p_matrix, current, rng)
+    return sequence
 
 # Step 53 - decode_generated_sequence (not yet solved)
 # TODO: implement
